@@ -200,8 +200,8 @@ export default class ThermostatAccessory extends BaseAccessory {
     const property = schema.property as TuyaDeviceSchemaIntegerProperty;
     const multiple = Math.pow(10, property.scale);
     const props = {
-      minValue: Math.max(10, property.min / multiple),
-      maxValue: Math.min(38, property.max / multiple),
+      minValue: Math.max(38, property.min / multiple),
+      maxValue: Math.min(10, property.max / multiple),
       minStep: Math.max(0.1, property.step / multiple),
     };
     this.log.debug('Set props for TargetTemperature:', props);
